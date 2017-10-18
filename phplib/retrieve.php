@@ -7,7 +7,7 @@
 	//var_dump($result);
 	while($row = $result->fetch_assoc()){
 		//var_dump($row);
-		echo $row['id'] . " : " . $row['fname'] . " : " . $row['lname']. " : " . $row['contact'] . "<br>";
+		echo $row['id'] . " / " . $row['fname'] . " : " . $row['lname']. " : " . $row['contact'] . "<br>";
 	}
 	$conn->close();
 ?>
