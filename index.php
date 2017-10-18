@@ -10,12 +10,12 @@
 
 </head>
 <body>
-	<div class="container">
+	<div class="container">  
 		<div class="row">
 			<div class="col-md-12">
 				<h1>My first bootstrap</h1>
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addMember">
-					Submit
+					Submitt
 				</button> 
 				<button type="button" class="btn btn-danger">Cancel</button>
 			</div>
