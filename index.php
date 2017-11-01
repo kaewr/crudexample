@@ -15,9 +15,40 @@
 			<div class="col-md-12">
 				<h1>My first bootstrap</h1>
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addMember">
-					Submitt
+					Add Member
 				</button> 
-				<button type="button" class="btn btn-danger">Cancel</button>
+				
+				
+				<?php 
+					require('phplib/retrieve.php');
+					//var_dump($output);
+				?>
+				<table class="table">
+					<tr>
+						<th>Seq.</th>
+						<th>ID</th>
+						<th>fname</th>
+						<th>lname</th>
+						<th>contact</th>
+					</tr>
+					<?php
+						$x=1;
+						foreach($output['data'] as $row){
+					?>
+					
+					<tr>
+						<td><?php echo $x; ?></td>
+						<td><?php echo $row[0]; ?></td>
+						<td><?php echo $row[1]; ?></td>
+						<td><?php echo $row[2]; ?></td>
+						<td><?php echo $row[3]; ?></td>
+					</tr>
+					
+					<?php
+							$x++;
+						}
+					?>
+				</table>
 			</div>
 		</div>
 	</div>
@@ -27,14 +58,20 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header"> 
-					Modal Header
+					Please Input Member Data:
 				</div>
-				<div class="modal-body">
-					Modal Body
-				</div>
-				<div class="modal-footer">
-					Modal Footer
-				</div>
+				<form method="POST" action="phplib/create.php">
+					<div class="modal-body">
+					ID: <input type="text" name="id"> <br>
+					Fname: <input type="text" name="fname"> <br>
+					Lname: <input type="text" name="lname"> <br>
+					Contact : <input type = "text" name="contact"> <br>
+					</div>
+					<div class="modal-footer">
+						<input type="submit" value="SUBMIT">
+						<input type="reset" value="Reset">
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
